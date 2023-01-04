@@ -24,8 +24,8 @@ func tokenValidationMiddleware(next http.Handler) http.Handler {
 			rw.Write([]byte("Token Invalid"))
 			return
 		}
-		rw.WriteHeader(http.StatusOK)
-		rw.Write([]byte("Authorized Token"))
-
+		// rw.WriteHeader(http.StatusOK)
+		// rw.Write([]byte("Authorized Token"))
+		next.ServeHTTP(rw, r)
 	})
 }
