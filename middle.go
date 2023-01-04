@@ -12,7 +12,7 @@ func tokenValidationMiddleware(next http.Handler) http.Handler {
 			return
 		}
 		token := r.Header["Token"][0]
-		check, err := ValidateToken(token, "Secure_Random_String")
+		check, err := ValidateToken(token, secret)
 
 		if err != nil {
 			rw.WriteHeader(http.StatusInternalServerError)

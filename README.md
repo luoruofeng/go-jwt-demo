@@ -35,3 +35,9 @@ SFMyNTY=.eyJhdWQiOiJmcm9udGVuZC5rbm93c2VhcmNoLm1sIiwiZXhwIjoiMTY3Mjc5NDExMyIsIml
 curl --location --request GET 'http://127.0.0.1:8888/other/home' \
 --header 'Token: SFMyNTY=.eyJhdWQiOiJmcm9udGVuZC5rbm93c2VhcmNoLm1sIiwiZXhwIjoiMTY3Mjc5NDExMyIsImlzcyI6Imtub3dzZWFyY2gubWwifQ==.m9KGQhJBrd/lwLTsqcyeoO+/FLekYyaCEsEYaSBnEMM='
 ```
+
+# build docker image
+```shell
+docker build . -t luoruofeng/auth-demo
+docker run -d -p 8888:8888 luoruofeng/auth-demo
+```
