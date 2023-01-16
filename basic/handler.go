@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -60,7 +60,7 @@ func SigninHandler(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// let’s see if the user exists
-	valid, err := validateUser(r.Header["Email"][0], r.Header["Passwordhash"][0])
+	valid, err := ValidateUser(r.Header["Email"][0], r.Header["Passwordhash"][0])
 	if err != nil {
 		// this means either the user does not exist
 		rw.WriteHeader(http.StatusUnauthorized)
@@ -74,7 +74,7 @@ func SigninHandler(rw http.ResponseWriter, r *http.Request) {
 		rw.Write([]byte("Incorrect Password"))
 		return
 	}
-	tokenString, err := getSignedToken()
+	tokenString, err := GetSignedToken()
 	if err != nil {
 		fmt.Println(err)
 		rw.WriteHeader(http.StatusInternalServerError)

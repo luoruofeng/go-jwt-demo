@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"crypto/hmac"
@@ -16,7 +16,7 @@ var (
 )
 
 // we need this function to be private
-func getSignedToken() (string, error) {
+func GetSignedToken() (string, error) {
 	// we make a JWT Token here with signing method of ES256 and claims.
 	// claims are attributes.
 	// aud - audience

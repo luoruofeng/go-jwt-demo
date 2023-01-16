@@ -41,3 +41,8 @@ curl --location --request GET 'http://127.0.0.1:8888/other/home' \
 docker build . -t luoruofeng/auth-demo
 docker run -d -p 8888:8888 luoruofeng/auth-demo
 ```
+
+# use third lib
+```shell
+go get -u github.com/golang-jwt/jwt/v4
+```

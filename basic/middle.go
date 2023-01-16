@@ -1,9 +1,9 @@
-package main
+package basic
 
 import "net/http"
 
 // We want all our routes for REST to be authenticated. So, we validate the token
-func tokenValidationMiddleware(next http.Handler) http.Handler {
+func TokenValidationMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		// check if token is present
 		if _, ok := r.Header["Token"]; !ok {
